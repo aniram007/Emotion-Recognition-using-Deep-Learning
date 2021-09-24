@@ -13,7 +13,7 @@ while True:
                         cv2.rectangle(frame,(x1,y1),(x2,y2),(0,255,0),3)
             cv2.imshow("Faces",frame)
             if not pause:
-                        cv2.imwrite("Corona Mask/Mask/"+str(counter)+".jpg",roi)
+                        cv2.imwrite("Face_Emotions/Angry/"+str(counter)+".jpg",roi)
                         counter+=1
             k = cv2.waitKey(30) & 0xFF
             if k == 27:
