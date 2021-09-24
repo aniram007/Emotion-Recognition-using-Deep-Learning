@@ -49,7 +49,7 @@ model.add(Dense(5)) 											#Output neuron to predict animal.
 model.add(Activation("softmax")) 										#Sigmoid activation function returns a value between 0-1.
 ###########################################TRAINING THE MODEL###########################################
 model.compile(loss="sparse_categorical_crossentropy",optimizer=keras.optimizers.Adam(),metrics=['accuracy'])			#Using Adam optmiser and mean square error to optimise the model.
-filepath="Models/Face/weights-improvement-{epoch:02d}-{val_accuracy:.2f}.hdf5" 						#Path to save the checkpoints.
+filepath="Models/Face/best.hdf5" 						#Path to save the checkpoints.
 checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min') 			#Save the models with the lowest validation loss upto that point.
 callbacks_list = [checkpoint] 											#Used in model.fit.
 model.fit(X, Y, validation_split=0.20, epochs=30, batch_size=10, callbacks=callbacks_list, verbose=1)				#Train the model for 30 epochs using 30% of the data as validation data.############################################SAVING THE MODEL############################################
