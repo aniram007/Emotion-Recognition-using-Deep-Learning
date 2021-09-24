@@ -5,11 +5,10 @@ import numpy as np 												#Python's vector/matrix processing library.
 import cv2 												#
 import FACE_DET 												#Face Detection library.
 ##############################################INITIALISATION###############################################
-classes = ["Mask","No Mask"]											#List containing target label names.
+classes = ["Angry","Happy","Normal","Sad","Shocked"]											#List containing target label names.
 cap = cv2.VideoCapture(0)                                                               							#Creates an object to obtain images from laptop webcam.
 ###########################################LOADING THE MODEL###########################################
-#model = keras.models.load_model("Models/Mask/weights-improvement-03-1.00.hdf5") 					#Loading the saved model.
-model = keras.models.load_model("Models/Mask/best.hdf5")
+model = keras.models.load_model("Models/Face/best.hdf5")						#Loading the saved model.
 ############################################TESTING THE MODEL###########################################
 while True: 												#
 	ret, img = cap.read()                                                               							#Obtain image from camera.
